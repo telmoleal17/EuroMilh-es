@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+option csharp_namespace = "ServidorEuroMilhoes";
+
+package greet;
+
+service EuroMilhoes{
+	rpc ListaApostas (Nif) returns (stream ApostaUtilizador);
+	rpc ListaApostasAtuais (teste) returns (stream TodasApostas);
+	rpc Registar (RegistarAposta) returns (RegistarApostaReply);
+	rpc TesteConeccao (teste) returns (Connection);
+	rpc ArquivarApostas (teste) returns (RespostaArquivar);
+	rpc ListaApostasVencedoras (teste) returns (stream ApostasVencedoras);
+	rpc SetSorteioAtualFalse (teste) returns (RespostaSorteio);
+	rpc ApostasFeitas (teste) returns (RespostaApostasFeitas);
+}
+
+message RegistarAposta {
+	int32 nif = 1;
+	string numeros = 2;
+	string estrelas = 3;
+	string data = 4;
+}
+
+
+message RegistarApostaReply {
+	string resposta = 1;
+}
+
+message Nif {
+	int32 niff = 1;
+}
+
+message ApostaUtilizador {
+	string numeros = 1;
+	string estrelas = 2;
+	string data = 3;
+	bool SorteioAtual = 4;
+}
+
+message TodasApostas {
+	int32 nif = 1;
+	string numeros = 2;
+	string estrelas = 3;
+	string data = 4;
+}
+
+message Connection {
+	bool statusConnection = 1;
+}
+
+message teste {
+	bool test = 1;
+}
+
+
+message RespostaArquivar {
+	string resposta = 1;
+}
+
+message ApostasVencedoras {
+	int32 nif = 1;
+	string numeros = 2;
+	string estrelas = 3;
+}
+
+message RespostaSorteio {
+	string resposta = 1;
+}
+
+message RespostaApostasFeitas{
+	bool resposta = 1;
+}

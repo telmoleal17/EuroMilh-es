@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "ServidorEuroMilhoes": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "applicationUrl": "https://25.78.32.49",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+
+  }
+}
